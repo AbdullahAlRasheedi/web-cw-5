@@ -11,6 +11,7 @@
       <!-- السؤال الثاني -->
       <h2 style="text-align: center; font-size: 1.5rem; margin: 1rem">
         قم بإدخال طولك بالأمتار
+
       </h2>
       <div class="center">
         <input
@@ -50,6 +51,25 @@
     <!-- --------------------------------------------------- -->
     <script>
       function getBMI() {
+        let bmi = document.getElementById("height").value;
+        let kg = document.getElementById("weight").value;
+        let user = ((kg / (bmi * bmi)));
+        let yweight = (`null`)
+        if(user <= 20){
+          yweight = (`أنت نحيف للغاية`)
+        }
+        else if(user > 20 && user <= 29){
+          yweight = ("وزنك جيد");
+        }
+        else if(user >= 30){
+          yweight = ("يا للهول! 😲 ");
+        }
+        else{
+          yweight = ("sorry your entery is uncorect")
+        }
+
+        console.log(yweight);
+        
         // height القيمة التي تدخلها في الحقل الأول تُخزن في المتغير
         // weight القيمة التي تدخلها في الحقل الثاني تُخزن في المتغير
         // (مؤشر كتلة الجسم = الوزن/(الطول*الطول
